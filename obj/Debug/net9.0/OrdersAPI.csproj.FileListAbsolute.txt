@@ -156,3 +156,12 @@ E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebToken
 E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
 E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+E:\projects\cqrs\OrdersAPI\obj\Debug\net9.0\OrdersAPI.sourcelink.json
+E:\projects\cqrs\OrdersAPI\obj\Debug\net9.0\swae.build.ex.cache
+E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Scalar.AspNetCore.dll
+E:\projects\cqrs\OrdersAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\projects\cqrs\OrdersAPI\obj\Debug\net9.0\OrdersAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\projects\cqrs\OrdersAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

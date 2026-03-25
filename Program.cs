@@ -1,6 +1,8 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
+using Microsoft.AspNetCore.OpenApi.Generated;
 
 var builder = WebApplication.CreateBuilder(args);
 // builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("BaseConnection"))); 
@@ -16,7 +18,22 @@ builder.Services.AddScoped<IValidator<CreateOrderCommand>, CreateOrderCommandVal
 // builder.Services.AddScoped<IEventHandler<OrderCreatedEvent>, OrderCreatedProjectionHandler>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddOpenApi();
+
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options.Title = "Order API";
+        options.Theme = ScalarTheme.DeepSpace;
+        options.Layout = ScalarLayout.Modern;
+        options.HideClientButton = true;
+    });
+}
 
 // app.MapPost("/api/orders", async (AppDbContext context, Order order) =>
 // app.MapPost("/api/orders", async (AppDbContext context, CreateOrderCommand command) =>

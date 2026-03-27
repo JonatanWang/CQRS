@@ -5,7 +5,7 @@ using Scalar.AspNetCore;
 using Microsoft.AspNetCore.OpenApi.Generated;
 
 var builder = WebApplication.CreateBuilder(args);
-// builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("BaseConnection"))); 
+//builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("BaseConnection"))); 
 builder.Services.AddDbContext<ReadDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("ReadDbConnection"))); 
 builder.Services.AddDbContext<WriteDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("WriteDbConnection"))); 
 
@@ -23,17 +23,14 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.MapOpenApi();
+app.MapScalarApiReference(options =>
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
-    {
-        options.Title = "Order API";
-        options.Theme = ScalarTheme.DeepSpace;
-        options.Layout = ScalarLayout.Modern;
-        options.HideClientButton = true;
-    });
-}
+    options.Title = "Order API";
+    options.Theme = ScalarTheme.DeepSpace;
+    options.Layout = ScalarLayout.Modern;
+    options.HideClientButton = true;
+});
 
 // app.MapPost("/api/orders", async (AppDbContext context, Order order) =>
 // app.MapPost("/api/orders", async (AppDbContext context, CreateOrderCommand command) =>
